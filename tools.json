@@ -1,0 +1,99 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "get_weather",
+            "description": "Get current weather for a location",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "City and country, e.g. 'Paris, France'"
+                    },
+                    "unit": {
+                        "type": "string",
+                        "enum": [
+                            "celsius",
+                            "fahrenheit"
+                        ],
+                        "description": "Temperature unit"
+                    }
+                },
+                "required": [
+                    "location"
+                ]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "list_files",
+            "description": "List files and directories in a specified path",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "path": {
+                        "type": "string",
+                        "description": "Directory path to list files from"
+                    }
+                },
+                "required": []
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "save_file",
+            "description": "Save content to a file with specified filename and extension",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "filename": {
+                        "type": "string",
+                        "description": "Name of the file (without extension)"
+                    },
+                    "extension": {
+                        "type": "string",
+                        "description": "File extension (e.g., 'txt', 'py', 'json', 'md')"
+                    },
+                    "content": {
+                        "type": "string",
+                        "description": "Content to write to the file"
+                    }
+                },
+                "required": [
+                    "filename",
+                    "extension",
+                    "content"
+                ]
+            }
+        }
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "read_file",
+            "description": "Read content from a file with specified filename and extension",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "filename": {
+                        "type": "string",
+                        "description": "Name of the file (without extension)"
+                    },
+                    "extension": {
+                        "type": "string",
+                        "description": "File extension (e.g., 'txt', 'py', 'json', 'md')"
+                    }
+                },
+                "required": [
+                    "filename",
+                    "extension"
+                ]
+            }
+        }
+    }
+]
